@@ -1,4 +1,4 @@
-### CSC Linux Env
+# CSC Linux Env
 
 This project requires docker-compose and docker to build.  
 Serves a web shell behind an nginx proxy.
