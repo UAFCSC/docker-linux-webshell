@@ -3,8 +3,9 @@ version: '3'
 services:
   nginx-proxy:
     image: nginxproxy/nginx-proxy
+    restart: always
     ports:
-      - "80:80"
+      - "0.0.0.0:80:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
@@ -12,40 +13,53 @@ services:
     build: ./tty/
     privileged: true
     hostname: webshell
+    restart: always
     expose: 
       - "7681"
     environment:
-      - VIRTUAL_HOST=webshell.localhost
+      - VIRTUAL_HOST=10.25.75.122
       - VIRTUAL_PORT=7681
       - SSH_PORT=22
 
   ubuntu-0:
     build: ./ubuntu-ssh/
     hostname: 'foo.bar'
+    restart: always
     expose:
       - "22"
   ubuntu-1:
     build: ./ubuntu-ssh/
     hostname: 'foo.bar'
+    restart: always
     expose:
       - "22"
   ubuntu-3:
     build: ./ubuntu-ssh/
     hostname: 'foo.bar'
+    restart: always
     expose:
       - "22"
   ubuntu-4:
     build: ./ubuntu-ssh/
     hostname: 'foo.bar'
+    restart: always
     expose:
       - "22"
   ubuntu-5:
     build: ./ubuntu-ssh/
     hostname: 'foo.bar'
+    restart: always
     expose:
       - "22"
   ubuntu-6:
     build: ./ubuntu-ssh/
     hostname: 'foo.bar'
+    restart: always
+    expose:
+      - "22"
+  ubuntu-7:
+    build: ./ubuntu-ssh/
+    hostname: 'foo.bar'
+    restart: always
     expose:
       - "22"
