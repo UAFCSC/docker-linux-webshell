@@ -19,6 +19,7 @@ password is csc for all containers
 - ubuntu-4
 - ubuntu-5
 - ubuntu-6
+- ubuntu-7
 
 ## TODO
 
